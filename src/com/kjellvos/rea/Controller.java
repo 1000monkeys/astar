@@ -4,8 +4,10 @@ import com.kjellvos.rea.astar.Graph;
 import com.kjellvos.rea.astar.Manhattan;
 import com.kjellvos.rea.astar.Node;
 import com.kjellvos.rea.astar.RouteFinder;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -90,7 +92,7 @@ public class Controller implements Initializable {
         long tempNanoTime = System.nanoTime();
         System.out.println("Setup time: " + (tempNanoTime - setupNanoTime) / 1_000_000);
 
-        List<Node> route = routeFinder.findRoute(map.getNode(0), map.getNode( 99 * 100 + 1));
+        List<Node> route = routeFinder.findRoute(map.getNode(0), map.getNode( 99 * 100 + 80));
         System.out.println("Route finding time: " + (System.nanoTime() - tempNanoTime) / 1_000_000);
 
         for (Node node : route){
